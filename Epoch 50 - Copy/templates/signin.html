@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+        }
+
+        .image-section {
+            width: 65%;
+            background-image: url('Image.jpg'); /* Set the background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .form-section {
+            width: 35%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .form-container {
+            width: 80%; /* Adjust as needed */
+            text-align: center;
+        }
+
+        .form-container h1 {
+            margin-top: 0;
+        }
+
+        .form-container label {
+            display: block;
+            text-align: left; /* Align labels to the left */
+            margin-bottom: 5px; /* Adjust margin for spacing */
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 8px 16px;
+            background-color: #466360;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #537678;
+        }
+
+        .form-container a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #537678;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-section"></div> <!-- Background image will be displayed here -->
+        <div class="form-section">
+            <div class="form-container">
+                <h1>Sign In</h1>
+                <form method="post">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                    <br>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <br>
+                    <button type="submit">Sign In</button>
+                    <br>      
+                </form>
+                <label for="No account">Don't have an account..?<a href="{{url_for('signup')}}">Sign Up</a></label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

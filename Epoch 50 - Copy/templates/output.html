@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output Page</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Output Page</h1>
+        
+        <!-- Container 1: Patient Details -->
+        <div class="patient-details-container">
+            <h1>Patient Details and Status</h1>
+    <p><strong>Username:</strong> {{ username }}</p>
+    <p><strong>Patient Name:</strong> {{ name }}</p>
+    <p><strong>Patient Age:</strong> {{ age }}</p>
+    <p><strong>Gender:</strong> {{ gender }}</p>
+    <p><strong>Phone Number:</strong> {{ phone_number }}</p>
+    
+        </div>
+
+        <!-- Container 2: Image -->
+        <div class="image-container">
+            <h2>Uploaded Image</h2>
+            {% if image_filename %}
+            <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" height="50px" width="50%" alt="Annotated Image">
+    {% endif %}
+        </div>
+
+        <!-- Container 3: Status -->
+        <div class="status-container">
+            
+            <p><strong><h2>Status:</h2></strong> {{ status }}</p>
+        </div>
+
+        <!-- Container 4: Back to Dashboard Button -->
+        <div class="button-container">
+            <a href="{{ url_for('dashboard1', username=username) }}"><button>Back to Dashboard</button></a>
+        </div>
+    </div>
+</body>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .patient-details-container,
+    .image-container,
+    .status-container,
+    .button-container{
+        width: 70%;
+        margin: 20px;
+        padding: 15px;
+        border: 1px solid #2522223f;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(29, 28, 28, 0.1);
+        background-color: #2824242e;
+        transition: .5s;
+        cursor: text;
+    }
+     .button-container button{
+        cursor: pointer;
+     }
+    .patient-details-container h2,
+    .image-container h2,
+    .status-container h2 {
+        margin-bottom: 10px;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+</style>
+
+</html>
